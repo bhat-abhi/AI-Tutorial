@@ -31,7 +31,7 @@ for i in clusters:
 plt.show()
 def distance(p1,p2):
 	return np.sqrt(np.sum((p1-p2)**2))
-#Implementing E step 
+	
 def assign_clusters(X, clusters):
 	for idx in range(X.shape[0]):
 		dist = []
@@ -44,8 +44,7 @@ def assign_clusters(X, clusters):
 		curr_cluster = np.argmin(dist)
 		clusters[curr_cluster]['points'].append(curr_x)
 	return clusters
-		
-#Implementing the M-Step
+	
 def update_clusters(X, clusters):
 	for i in range(k):
 		points = np.array(clusters[i]['points'])
